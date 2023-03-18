@@ -1,0 +1,56 @@
+realm: "racelog"
+roles:
+  - name: anonymous
+    permissions:
+      - uri: racelog.public
+        match: prefix
+        allow:
+          call: true
+          subscribe: true
+  - name: backend
+    permissions:
+      - uri: racelog.
+        match: prefix
+        allow:
+          call: true
+          register: true
+          publish: true
+          subscribe: true
+  - name: admin
+    permissions:
+      - uri: racelog.
+        match: prefix
+        allow:
+          call: true
+          register: true
+          publish: true
+          subscribe: true
+  - name: racedata_provider
+    permissions:
+      - uri: racelog.dataprovider
+        match: prefix
+        allow:
+          call: true
+          register: false
+          publish: true
+          subscribe: true
+      - uri: racelog.public
+        match: prefix
+        allow:
+          call: true
+      - uri: racelog.public.live
+        match: prefix
+        allow:
+          publish: true
+
+auth:
+  tickets:
+    - principal: backend
+      ticket: ${BACKEND_TICKET}
+      role: backend
+    - principal: dataprovider
+      ticket: ${DATAPROVIDER_TICKET}
+      role: racedata_provider
+    - principal: admin
+      ticket: ${ADMIN_TICKET}
+      role: admin
