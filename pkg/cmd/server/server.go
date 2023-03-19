@@ -112,6 +112,9 @@ func startServer() error {
 	wss.EnableTrackingCookie = true
 	// Set keep-alive period to 30 seconds.
 	wss.KeepAlive = 30 * time.Second
+	// we need to allow access from everywhere
+	//nolint:errcheck // no errcheck needed here
+	wss.AllowOrigins([]string{"*"})
 
 	log.Info("Starting websocket listener", log.String("wsAddr", config.WSAddr))
 	wsCloser, err := wss.ListenAndServe(config.WSAddr)
