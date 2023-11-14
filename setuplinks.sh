@@ -8,16 +8,18 @@ if [ ! -e $HOME/.gitconfig.local ]; then
     fi
 fi
 
-# linking .npmrc
-if [ ! -e $HOME/.npmrc ]; then
-    if [ -f .npmrc ];  then
-        echo "Linking .npmrc"
-        ln -s $PWD/.npmrc $HOME/.npmrc
+# linking .cobra.yaml
+if [ ! -e $HOME/.cobra.yaml ]; then
+    if [ -f $PWD/.cobra.yaml ]; then
+        echo "Linking .cobra.yaml"
+        ln -s $PWD/.cobra.yaml $HOME/.cobra.yaml
     fi
 fi
 
-# linking .cobra.yaml
-if [ ! -e $HOME/.cobra.yaml ]; then
-    echo "Linking .cobra.yaml"
-    ln -s $PWD/.cobra.yaml $HOME/.cobra.yaml
+# linking .npmrc
+if [ ! -e $HOME/.npmrc ]; then
+    if [ -f $PWD/.npmrc ]; then
+        echo "Linking .npmrc"
+        ln -s $PWD/.npmrc $HOME/.npmrc
+    fi
 fi
