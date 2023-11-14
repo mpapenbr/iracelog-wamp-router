@@ -14,3 +14,17 @@ updates:
     schedule:
       interval: "weekly"
       day: "saturday"
+
+  - package-ecosystem: github-actions
+    directory: /
+    labels:
+      - build
+    schedule:
+      interval: "weekly"
+      day: "saturday"
+    groups:
+      github-actions:
+        dependency-type: "production"
+    commit-message:
+      prefix: "gha"
+      include: "scope"
