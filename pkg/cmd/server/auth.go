@@ -4,9 +4,8 @@ import (
 	"os"
 
 	"github.com/drone/envsubst"
-	"gopkg.in/yaml.v3"
-
 	"github.com/mpapenbr/iracelog-wamp-router/pkg/config"
+	"gopkg.in/yaml.v3"
 )
 
 type racelogAuth struct {

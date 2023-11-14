@@ -8,10 +8,9 @@ import (
 	"github.com/gammazero/nexus/v3/router"
 	"github.com/gammazero/nexus/v3/router/auth"
 	"github.com/gammazero/nexus/v3/wamp"
-	"github.com/spf13/cobra"
-
 	"github.com/mpapenbr/iracelog-wamp-router/log"
 	"github.com/mpapenbr/iracelog-wamp-router/pkg/config"
+	"github.com/spf13/cobra"
 )
 
 func NewServerCmd() *cobra.Command {

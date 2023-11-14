@@ -111,7 +111,7 @@ linters-settings:
     sections:
       - standard # standard packages
       - default # all other imports that do not fall in any group
-      - prefix(github.com/mpapenbr/iracelog-wamp-router) # internal imports from `iracelog-wamp-router`
+      - prefix(github.com/mpapenbr/iracelog-service-manager-go) # internal imports from `iracelog-service-manager-go`
     section-separators:
       - newLine
 
@@ -233,7 +233,7 @@ linters-settings:
   goimports:
     # put imports beginning with prefix after 3rd-party packages;
     # it's a comma-separated list of prefixes
-    local-prefixes: "github.com/mpapenbr/iracelog-wamp-router"
+    local-prefixes: "github.com/mpapenbr/iracelog-service-manager-go"
 
   golint:
     # minimal confidence for issues, default is 0.8
@@ -261,7 +261,7 @@ linters-settings:
     #   - G204
 
   gosimple:
-    go: "1.20" # version to target - default is '1.13'
+    go: "1.21" # version to target - default is '1.13'
     checks: ["all"] # https://staticcheck.io/docs/options#checks for more info
 
   govet:
@@ -466,20 +466,18 @@ linters:
   disable-all: true # disable all, selectively enable what is needed
   enable:
     # Defaults
-    - deadcode
     - errcheck
     - gosimple
     - govet
     - ineffassign
     - staticcheck
-    - structcheck
     - typecheck
     - unused
-    - varcheck
+
 
     # Additional
     - cyclop
-    - depguard
+    # - depguard
     - dogsled
     - dupl
     - errname
@@ -495,10 +493,9 @@ linters:
     - gofumpt
     - funlen
     - goimports
-    # - gomnd # very noisy
+    # - gomnd too noisy
     - goprintffuncname
     - gosec
-    - ifshort
     - lll
     - makezero
     - misspell
@@ -506,17 +503,17 @@ linters:
     - nestif
     - nilerr
     - noctx
-    - nolintlint
+    # - nolintlint
     - predeclared
     - revive
-    # - stylecheck # very noisy
+    # - stylecheck too noisy
     - tagliatelle
     - thelper
     - unconvert
     - unparam
     - wastedassign
     - whitespace
-    # - wrapcheck # very noisy
+    # - wrapcheck too noisy
 
   # Interesting linters - enable if they fit your needs
   # - maintidx
