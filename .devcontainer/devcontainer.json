@@ -3,7 +3,7 @@
 {
 	"name": "Go",
 
-	"image": "mcr.microsoft.com/devcontainers/go:1.20",
+	"image": "mcr.microsoft.com/devcontainers/go:1.21",
 	// alternative: use the bullseye image
 	// "image": "mcr.microsoft.com/devcontainers/go:1.20-bullseye",
 	"runArgs": [
@@ -26,7 +26,9 @@
 			},
 			"[go]": {
 			  "editor.rulers": [90]
-			}
+			},
+			"editor.defaultFormatter": "golang.go",
+        	"editor.formatOnSave": true
 		  },
 		  // Add the IDs of extensions you want installed when the container is created.
 		  "extensions": [
@@ -35,7 +37,8 @@
 			"esbenp.prettier-vscode",
 			"github.vscode-pull-request-github",
 			"EditorConfig.EditorConfig",
-			"cschleiden.vscode-github-actions"
+			"cschleiden.vscode-github-actions",
+			"GitHub.copilot"
 		  ]
 		}
 	  },
@@ -53,7 +56,7 @@
 	// Comment out to connect as root instead. More info: https://aka.ms/vscode-remote/containers/non-root.
 	"remoteUser": "vscode",
 	"features": {
-		"ghcr.io/devcontainers/features/docker-in-docker": "20.10",
+		"ghcr.io/devcontainers/features/docker-in-docker": "latest",
 		"ghcr.io/devcontainers-contrib/features/pre-commit": "latest"
 	}
 }
