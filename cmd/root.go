@@ -9,12 +9,11 @@ import (
 	"os"
 	"strings"
 
+	serverCmd "github.com/mpapenbr/iracelog-wamp-router/pkg/cmd/server"
+	"github.com/mpapenbr/iracelog-wamp-router/version"
 	"github.com/spf13/cobra"
 	"github.com/spf13/pflag"
 	"github.com/spf13/viper"
-
-	serverCmd "github.com/mpapenbr/iracelog-wamp-router/pkg/cmd/server"
-	"github.com/mpapenbr/iracelog-wamp-router/version"
 )
 
 const envPrefix = "IWR"

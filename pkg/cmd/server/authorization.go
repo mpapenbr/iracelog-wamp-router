@@ -2,7 +2,6 @@ package server
 
 import (
 	"github.com/gammazero/nexus/v3/wamp"
-
 	"github.com/mpapenbr/iracelog-wamp-router/log"
 	"github.com/mpapenbr/iracelog-wamp-router/pkg/config"
 )
